@@ -9,15 +9,30 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" />
     <title>TP4 ejercicio 1 - DOM</title>
   </head>
   <body>
     <header></header>
-    <main>
-        <section></section>
+    <main class="d-flex align-content-center">
+      <section
+        class="container d-flex flex-column justify-content-center"
+      >
+        <article class="text-center my-5">
+          <h1 class="text-success mb-3">Bienvenido al juego de adivinanza!!</h1>
+          <p class="lead fs-4">Para comenzar el mismo seleccione comenzar juego</p>
+        </article>
+        <article class="text-center">
+          <button type="button" class="btn btn-primary">Comenzar juego</button>
+          <form id="formularioInput">
+
+          </form>
+        </article>
+      </section>
     </main>
-    <footer>&copy; Todos los derechos reservados </footer>
+    <footer class="text-center py-3 bg-black text-light">
+      &copy; Todos los derechos reservados
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
