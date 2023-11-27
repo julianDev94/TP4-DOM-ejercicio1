@@ -1,28 +1,35 @@
-const comenzarJuego = document.querySelector('.btn');
-const sectionPrincipal = document.querySelector('section');
+const comenzarJuego = document.querySelector(".btn");
+const articlePrincipal = document.querySelector("section");
+const formValidacion = document.querySelector("form");
 
-function numAleatorio(){
-    let numAleatorio = Math.floor(Math.random()*50);
-    console.log(numAleatorio);
+let numAleatorio = 0;
 
-    sectionPrincipal.removeChild(sectionPrincipal.children[0]);
+function ocultarArticle() {
 
+  numAleatorio = Math.floor(Math.random() * 50);
+  console.log(numAleatorio);
+  articlePrincipal.removeChild(articlePrincipal.children[0]);
 
-    let parrafoIngreseValor = document.createElement('p');
-    parrafoIngreseValor.innerHTML = 'Ingrese el valor para comprobar si adivinó o no';
-    parrafoIngreseValor.className = 'lead fs-2 text-danger text-center ';
-    sectionPrincipal.appendChild(parrafoIngreseValor);
+  const articleOcultar = document.getElementById("ocultar");
+  console.log(articleOcultar);
+  articleOcultar.className = "d-block";
 
-    let input = document.createElement('input');
-    input.className = 'form-control w-50 shadow rounded border'
-    sectionPrincipal.appendChild(input);
+  const validarValores = (e) => {
+    e.preventDefault();
+    const inputValor = document.querySelector("input");
+    
+    console.log(inputValor.value);
+    if (inputValor.value == numAleatorio) {
+      alert("Felicidades, acertó el valor");
+    } else if (inputValor.value > numAleatorio) {
+      alert("El valor ingresado es mayor al valor a adivinar");
+    } else {
+      alert("El valor ingresado es menor al valor a adivinar");
+    }
+    formValidacion.reset();
+  };
 
-    let btnAdivinar = document.createElement('button');
-    btnAdivinar.innerHTML = 'Enviar';
-    btnAdivinar.className = 'btn btn-warning';
-    sectionPrincipal.appendChild(btnAdivinar);
-
+  formValidacion.addEventListener("submit", validarValores);
 }
 
-
-comenzarJuego.addEventListener('click', numAleatorio);
+comenzarJuego.addEventListener("click", ocultarArticle);

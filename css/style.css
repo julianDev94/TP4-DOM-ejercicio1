@@ -8,3 +8,6 @@ main{
     flex-grow: 1;
 }
 
+#ocultar{
+    display:none;
+}
